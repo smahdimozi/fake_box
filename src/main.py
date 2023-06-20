@@ -1,27 +1,34 @@
-class findenum():
-    def __init__(firstlist=[], secondlist=[],people_fill=[]):
+
+
+class finde_name():
+    def __init__(self, firstlist:list, secondlist:list, people_fill:list):
         self.firstlist = firstlist
         self.secondlist = secondlist
-    def list_fillbox(countinu = 'y', *arg, **kwarg):
-    while countinu == 'y':
-        people_fill.append(input())
-        duplicate_people_fill = list(dict.fromkeys(nima_list))
-        countinu = input(f'do you want keep input?')
-    return people_fill, duplicate_people_fill
-    duplicate_people_fill = list_fillbox()[1]
-    number_of_repetetive_name = {}
-    def counter_repetetive_name(list1=[], list2=[]):
-        for i in list1:
+        self.people_fill = people_fill
+
+    def list_fillbox(self,countinu = 'y', *arg, **kwarg):
+        while countinu == 'y':
+            self.people_fill.append(input())
+            duplicate_people_fill = list(dict.fromkeys(self.firstlist))
+            countinu = input(f'do you want keep input?')
+        return self.people_fill, duplicate_people_fill
+
+    def counter_repetetive_name(self):
+        duplicate_people_fill = self.people_fill
+        number_of_repetetive_name = {}
+        for i in self.people_fill:
             name = i
-            number_of_repetetive_name[name] = list2.count(i)
+            self.number_of_repetetive_name[name] = self.secondlist.count(i)
         return number_of_repetetive_name
+    
+    
+    def result(self):
+        people_repeats = self.number_of_repetetive_name
 
-    people_repeats = counter_repetetive_name(duplicate_nima_list, people_fill)
-
-    for i in list(people_num.keys()) :
-        if people_repeats[i] == 1:
-            fake_box = i
-            break
-        elif people_repeats[i] % 2 == 1:
-            fake_box = i
-            break
+        for i in list(self.people_fill.keys()):
+            if people_repeats[i] == 1:
+                fake_box = i
+                break
+            elif people_repeats[i] % 2 == 1:
+                fake_box = i
+                break
